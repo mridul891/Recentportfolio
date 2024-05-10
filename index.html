@@ -18,7 +18,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <!--==================== SWIPER CSS ====================-->
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
 
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="./assets/css/styles.css" />
@@ -49,13 +49,13 @@
               </a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link"
+              <a href="#qualification" class="nav__link"
                 ><i class="uil uil-graduation-cap nav__icon"></i
                 >Qualification</a
               >
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link"
+              <a href="#portfolio" class="nav__link"
                 ><i class="uil uil-scenery nav__icon"></i>Projects</a
               >
             </li>
@@ -543,7 +543,7 @@
       </section>
 
       <!--==================== QUALIFICATION ====================-->
-      <section class="qualification section">
+      <section class="qualification section" id="qualification">
         <h2 class="section__title">Qualification</h2>
         <span class="section__subtitle"
           >My Education Qualification & Work Experience</span
@@ -662,9 +662,7 @@
                 </div>
                 <div>
                   <h3 class="qualification__title">Freelancer</h3>
-                  <span class="qualification__subtitle"
-                    >Individual</span
-                  >
+                  <span class="qualification__subtitle">Individual</span>
                   <div class="qualification__calendar">
                     <i class="uil uil-calendar-alt"></i>
                     2022-Present
@@ -673,7 +671,6 @@
               </div>
 
               <!-- qualification 3 -->
-             
             </div>
           </div>
         </div>
@@ -684,26 +681,71 @@
         <h2 class="section__title">Portfolio</h2>
         <span class="section__subtitle">Most Recent Work</span>
 
-        <div class="portfolio__container container">
-          <div>
+        <div class="portfolio__container container swiper-container">
+          <div class="swiper-wrapper">
             <!-- Project 1 -->
-            <div class="portfolio__content grid">
-              <img src="" alt="" class="portfolio__img" />
+            <div class="portfolio__content grid swiper-slide">
+              <img src="./assets/img/p1.png" alt="" class="portfolio__img" />
               <div class="portfolio data">
-                <h3 class="portfolio__title">Modern Website</h3>
+                <h3 class="portfolio__title">Code Breakdown</h3>
                 <p class="portfolio__description">
-                  Website adaptable to all devices , with ui components and
-                  animated interactions.
+                  Website that helps you to convert a code from one Language to
+                  another made using MERN STACK.
                 </p>
                 <a
-                  href=""
+                  href="#"
                   class="button button--flex button--small portfolio__button"
                   >Demo
-                  <i class="uil uil-arrow-right"></i>
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="portfolio__content grid swiper-slide">
+              <img src="./assets/img/p2.png" alt="" class="portfolio__img" />
+              <div class="portfolio data">
+                <h3 class="portfolio__title">Rishikesh On Wheel</h3>
+                <p class="portfolio__description">
+                  Freelance Website that Is been created for a scooty rental
+                  shop made using MERN STACK.
+                </p>
+                <a
+                  href="#"
+                  class="button button--flex button--small portfolio__button"
+                  >Demo
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+            <!-- project-3 -->
+            <div class="portfolio__content grid swiper-slide">
+              <img src="./assets/img/p3.png" alt="" class="portfolio__img" />
+              <div class="portfolio data">
+                <h3 class="portfolio__title">Portfolio</h3>
+                <p class="portfolio__description">
+                  My Personal Portfolio website made using Only HTML,CSS and Js
+                  with a clean and minimal UI.
+                </p>
+                <a
+                  href="#"
+                  class="button button--flex button--small portfolio__button"
+                  >Demo
+                  <i class="uil uil-arrow-right button__icon"></i>
                 </a>
               </div>
             </div>
           </div>
+
+          <!-- add arrows -->
+          <div class="swiper-button-next">
+            <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+          </div>
+
+          <!-- add pagination -->
+          <div class="swiper-pagination"></div>
         </div>
       </section>
 
@@ -717,7 +759,7 @@
     <!--==================== SCROLL TOP ====================-->
 
     <!--==================== SWIPER JS ====================-->
-    <script src=""></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
 
     <!--==================== MAIN JS ====================-->
     <script src="./assets/js/main.js"></script>

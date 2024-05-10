@@ -65,11 +65,21 @@ tabs.forEach(tab => {
         tab.classList.add('qualification__active')
     })
 })
-/*==================== SERVICES MODAL ====================*/
 
 
 /*==================== PORTFOLIO SWIPER  ====================*/
-
+let swiper = new Swiper('.portfolio__container', {
+    cssMode: true,
+    loop:true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+        el: '.swipper-pagination',
+        clickable:true,
+    },
+})
 
 /*==================== TESTIMONIAL ====================*/
 

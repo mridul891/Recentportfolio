@@ -113,3 +113,41 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+// Gsap effect 
+// gsap.from(".hello", {
+//     ease: "",
+//     color: "red",
+//     duration: 1,
+//     stagger: 1,
+//     repeat: -1,
+// })
+
+const words = ["React Native", "Full Stack"]; // Array of words to cycle through
+let currentIndex = 0; // Index to keep track of the current word
+
+// Function to change the text with animation
+function changeText() {
+    gsap.to("#hello", {
+        onComplete: updateText,
+        opacity: 0,
+        duration: 1,
+        // ease: 'ease-out',
+        stagger: 1,
+    });
+}
+
+// Function to update the text content and restart animation
+function updateText() {
+    currentIndex = (currentIndex + 1) % words.length; // Move to the next word or loop back to the beginning
+    document.getElementById("hello").textContent = words[currentIndex]; // Update text content
+    gsap.to("#hello", { duration: 0.5, opacity: 1 }); // Fade in the new text
+}
+
+// Call the changeText function every 3 seconds
+setInterval(changeText, 3000);
+
+
+
+
+

@@ -24,6 +24,35 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
 
     <title>Mridul Pandey - Portfolio</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "A_tWCB2HX6GhNzxzY",
+        });
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // these IDs from the previous steps
+            emailjs.sendForm("service_bzj58eh", "template_gfufigb", this).then(
+              () => {
+                console.log("SUCCESS!");
+              },
+              (error) => {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
   </head>
   <body class="dark-theme">
     <!--==================== HEADER ====================-->
@@ -697,9 +726,7 @@
             <div class="portfolio__content grid swiper-slide">
               <img src="./assets/img/p0.png" alt="" class="portfolio__img" />
               <div class="portfolio data">
-                <h3 class="portfolio__title">
-                  SAAS - 3D Landing Page
-                </h3>
+                <h3 class="portfolio__title">SAAS - 3D Landing Page</h3>
                 <p class="portfolio__description">
                   3D Landing Page for an Organisation.
                 </p>
@@ -716,7 +743,10 @@
               <img src="./assets/img/p6.png" alt="" class="portfolio__img" />
               <div class="portfolio data">
                 <h3 class="portfolio__title">Valorant Landing Page</h3>
-                <p class="portfolio__description">Landing Page for the Valorant Jett Character using framer motion                </p>
+                <p class="portfolio__description">
+                  Landing Page for the Valorant Jett Character using framer
+                  motion
+                </p>
                 <a
                   href="https://valorant-crytek.vercel.app/"
                   class="button button--flex button--small portfolio__button"
@@ -875,35 +905,37 @@
             </div>
           </div>
 
-          <form action="" class="contact__form grid">
+          <form action="" class="contact__form grid" id="contact-form">
             <div class="contact__inputs grid">
               <div class="contact__content">
                 <label for="" class="contact__label">Name</label>
-                <input type="text" class="contact__input" />
+                <input type="text" class="contact__input" name="user_name"/>
               </div>
               <div class="contact__content">
                 <label for="" class="contact__label">Email</label>
-                <input type="email" class="contact__input" />
+                <input type="email" class="contact__input" name="user_email" />
               </div>
             </div>
             <div class="contact__content">
               <label for="" class="contact__label">Subject</label>
-              <input type="text" class="contact__input" />
+              <input type="text" class="contact__input" name="user_phone"/>
             </div>
             <div class="contact__content">
-              <label for="" class="contact__label">Message</label>
+              <label for="" class="contact__label" >Message</label>
               <textarea
-                name=""
                 cols="0"
                 rows="7"
                 class="contact__input"
+                name="message"
               ></textarea>
             </div>
 
             <div>
-              <a href="#" class="button button--flex">
-                Send Message <i class="uil uil-message button__icon"></i>
-              </a>
+              <input
+                type="submit"
+                value="Send Message"
+                class="button button--flex"
+              />
             </div>
           </form>
         </div>
